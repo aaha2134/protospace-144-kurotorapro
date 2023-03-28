@@ -1,14 +1,3 @@
-<main class="main">
-  <div class="inner">
-    <%@protos.each do |proto| %>
-      <div class="content_post" style="background-image: url(<%= tweet.image %>);">
-        <p><%= tweet.text %></p>
-          <span class="name">
-        <%= tweet.name %>
-      </span>
-    </div>
-  <% end %>
-
     <%# ログインしているときは以下を表示する %>
       <div class="greeting"> 
         こんにちは、
@@ -20,3 +9,19 @@
     </div>
   </div>
 </main>
+
+
+
+
+<main class="main">
+  <div class="inner">
+    <%@protos.each do |proto| %>
+      <div class="content_post" style="background-image: url(<%= proto.image %>);">
+        <p><%= proto.comments %></p>
+          <span class="name">
+        <%= proto.user %>
+      </span>
+    </div>
+  <% end %>
+
+  <%# 部分テンプレートで呼び出す？ %>
